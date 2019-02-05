@@ -12,6 +12,15 @@ describe('<Game />', ()=>{
 		wrapper.unmount();
 	});
 
+	it('Should render the turn of the player according to state.turn', () => {	
+		const app = shallow(<Game />);
+		expect(app.find('.player-turn').text()).toEqual('First Player');
+		app.instance().onPlayerMove([2,2]);
+		expect(app.find('.player-turn').text()).toEqual('Second Player');
+		app.instance().onPlayerMove([0,2]);
+		expect(app.find('.player-turn').text()).toEqual('First Player');
+	})
+
 	it('Should render piece selector before game starts and board after', () => {	
 		const app = mount(<Game />);
 
@@ -35,8 +44,19 @@ describe('<Game />', ()=>{
 
 describe('<Piece />', ()=>{
 
-	it('Should render empty element', () => {
+	it('Should render an empty space', () => {
 		const piece = shallow(<Piece symbol={{ value: null }} />)
 		expect(piece.text()).toEqual('')
+	});
+
+	it('Should render an X', () => {
+		const piece = shallow(<Piece symbol={'X'} />)
+		expect(piece.text()).toEqual('X')
+	});
+
+	it('Matches snapshot', () => {
+		const tree = mount(<Piece />);
+		expect(toJson(tree)).toMatchSnapshot();
+		tree.unmount();
 	});
 })

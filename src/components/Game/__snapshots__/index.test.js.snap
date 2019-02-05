@@ -3,7 +3,11 @@
 exports[`<Game /> Matches snapshot 1`] = `
 <Game>
   <div>
-    Second Player
+    <h1
+      className="player-turn"
+    >
+      First Player
+    </h1>
     <div
       className="piece-selector"
     >
@@ -23,4 +27,13 @@ exports[`<Game /> Matches snapshot 1`] = `
     </div>
   </div>
 </Game>
+`;
+
+exports[`<Piece /> Matches snapshot 1`] = `
+<Piece>
+  <div
+    className="piece"
+    onClick={null}
+  />
+</Piece>
 `;
