@@ -1,10 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Game /> Matches snapshot 1`] = `
-<div>
-  <h1>
-    Game component
-  </h1>
-  <Text />
-</div>
+<Game>
+  <div>
+    Second Player
+    <div
+      className="piece-selector"
+    >
+      Select
+      <button
+        id="btnX"
+        onClick={[Function]}
+      >
+        x
+      </button>
+      <button
+        id="btnO"
+        onClick={[Function]}
+      >
+        o
+      </button>
+    </div>
+  </div>
+</Game>
 `;

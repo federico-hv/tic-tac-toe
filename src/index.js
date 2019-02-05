@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Game from './Game';
+import Game from './components/Game';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Game />, document.getElementById('root'));
@@ -9,3 +9,14 @@ ReactDOM.render(<Game />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+if (module.hot) {
+  module.hot.accept('./components/Game', () => {
+    const NextApp = require('./components/Game').default
+    ReactDOM.render(
+      <Game/>,
+      document.getElementById('root')
+    )
+  })
+}
