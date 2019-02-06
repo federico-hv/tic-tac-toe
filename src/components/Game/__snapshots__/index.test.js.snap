@@ -1,60 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Board /> Matches snapshot 1`] = `
-<div
-  className="board"
->
-  <Piece
-    key="0"
-    onSelect={[Function]}
-    symbol="X"
-  />
-  <Piece
-    key="1"
-    onSelect={[Function]}
-    symbol=""
-  />
-  <Piece
-    key="2"
-    onSelect={[Function]}
-    symbol="O"
-  />
-  <Piece
-    key="0"
-    onSelect={[Function]}
-    symbol="O"
-  />
-  <Piece
-    key="1"
-    onSelect={[Function]}
-    symbol="X"
-  />
-  <Piece
-    key="2"
-    onSelect={[Function]}
-    symbol=""
-  />
-  <Piece
-    key="0"
-    onSelect={[Function]}
-    symbol="X"
-  />
-  <Piece
-    key="1"
-    onSelect={[Function]}
-    symbol="O"
-  />
-  <Piece
-    key="2"
-    onSelect={[Function]}
-    symbol="X"
-  />
-</div>
-`;
-
 exports[`<Game /> Matches snapshot 1`] = `
 <Game>
-  <div>
+  <div
+    className="game-container"
+  >
     <div
       className="board"
     >
@@ -83,13 +33,4 @@ exports[`<Game /> Matches snapshot 1`] = `
     </div>
   </div>
 </Game>
-`;
-
-exports[`<Piece /> Matches snapshot 1`] = `
-<Piece>
-  <div
-    className="piece"
-    onClick={null}
-  />
-</Piece>
 `;

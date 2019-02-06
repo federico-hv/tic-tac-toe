@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Piece /> Matches snapshot 1`] = `
+<Piece>
+  <div
+    className="piece"
+    onClick={null}
+  />
+</Piece>
+`;

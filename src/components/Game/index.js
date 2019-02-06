@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
+import Board from '../Board';
+import Piece from '../Piece';
 import './styles.css';
-
-const Piece = ({symbol, onSelect}) => <div onClick={symbol === '' ? ()=>onSelect(symbol) : null} className="piece">{symbol}</div>
-
-const Board = ({data, onMove} ) => (
-  <div className="board">
-    {data.map((row, i) => row.map((el, j) => <Piece key={j} onSelect={(s)=>onMove([i,j])} symbol={el} />))}
-  </div>
-);
 
 
 class Game extends Component {
@@ -34,15 +28,6 @@ class Game extends Component {
     
     this.setState({ data }, this.checkGameResult);
   }
-
-  // There is a victory if:
-  // All indexes have same value
-  // A row is complete
-  // Cross [0][0] [1][1] [2][2] or [0][2] [1][1] [2][0] 
-  //
-  // There is a tie if all squares are filled and none of
-  // the above happened
-
 
   /**
    * Receives the data array and returns the final result
@@ -107,13 +92,14 @@ class Game extends Component {
         return this.setState({ gameEnded: true, result: `Player ${this.state.player+1} wins`});
       case 2:
         return this.setState({ gameEnded: true, result: `There's a tie`});
-
+      default:
+        return this.setState({ player: newPlayer });
     }
   }
 
   render() {
     return (
-      <div>
+      <div className="game-container">
         {
           this.state.gameEnded ? 
             (
