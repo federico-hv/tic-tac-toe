@@ -1,29 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Board /> Matches snapshot 1`] = `
+<div
+  className="board"
+>
+  <Piece
+    key="0"
+    onSelect={[Function]}
+    symbol="X"
+  />
+  <Piece
+    key="1"
+    onSelect={[Function]}
+    symbol=""
+  />
+  <Piece
+    key="2"
+    onSelect={[Function]}
+    symbol="O"
+  />
+  <Piece
+    key="0"
+    onSelect={[Function]}
+    symbol="O"
+  />
+  <Piece
+    key="1"
+    onSelect={[Function]}
+    symbol="X"
+  />
+  <Piece
+    key="2"
+    onSelect={[Function]}
+    symbol=""
+  />
+  <Piece
+    key="0"
+    onSelect={[Function]}
+    symbol="X"
+  />
+  <Piece
+    key="1"
+    onSelect={[Function]}
+    symbol="O"
+  />
+  <Piece
+    key="2"
+    onSelect={[Function]}
+    symbol="X"
+  />
+</div>
+`;
+
 exports[`<Game /> Matches snapshot 1`] = `
 <Game>
   <div>
-    <h1
-      className="player-turn"
-    >
-      First Player
-    </h1>
     <div
-      className="piece-selector"
+      className="board"
     >
-      Select
-      <button
-        id="btnX"
-        onClick={[Function]}
+      <h1
+        className="player-turn"
       >
-        x
-      </button>
-      <button
-        id="btnO"
-        onClick={[Function]}
+        First Player
+      </h1>
+      <div
+        className="piece-selector"
       >
-        o
-      </button>
+        Select
+        <button
+          id="btnX"
+          onClick={[Function]}
+        >
+          x
+        </button>
+        <button
+          id="btnO"
+          onClick={[Function]}
+        >
+          o
+        </button>
+      </div>
     </div>
   </div>
 </Game>
