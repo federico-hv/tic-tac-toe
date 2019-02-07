@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Board from '../Board';
 import Piece from '../Piece';
+import ResetButton from '../ResetButton';
+import toe from '../../assets/toe.svg';
 import './styles.css';
 
 
@@ -89,7 +91,7 @@ class Game extends Component {
       case 0:
         return this.setState({ player: newPlayer });
       case 1:
-        return this.setState({ gameEnded: true, result: `Player ${this.state.player+1} wins`});
+        return this.setState({ gameEnded: true, result: `Player ${this.state.player+1} wins!`});
       case 2:
         return this.setState({ gameEnded: true, result: `There's a tie`});
       default:
@@ -97,23 +99,47 @@ class Game extends Component {
     }
   }
 
+  /**
+   * Resets the game to its original state
+   */
+  onReset = () => {
+    this.setState({
+      data: (new Array(3)).fill().map(row => new Array(3).fill('')),
+      starterPiece: null,
+      player: 0,
+      gameEnded: false,
+      result: ''
+    });
+  }
+
   render() {
+    const {
+      player,
+      data,
+      starterPiece,
+      gameEnded,
+      result 
+    } = this.state;
+    const currentPlayer = player === 0 ? 1 : 2;
+
     return (
-      <div className="game-container">
+      <div className={starterPiece === null && result === '' ? 'game-container' : `game-container gc-${currentPlayer}`}>
         {
-          this.state.gameEnded ? 
-            (
-              <div className="game-result">{this.state.result}</div>
-            )
-          : (
-            <div className="board">
-              <h1 className="player-turn">{this.state.player === 0 ? 'First Player' : 'Second Player'}</h1>
-              {this.state.starterPiece !== null ? <Board onMove={this.onPlayerMove} data={this.state.data} /> : 
+          (
+            <div className="board-container">
+              {
+                starterPiece !== null ? <Board onMove={this.onPlayerMove} result={result} player={player === 0 ? 1 : 2} data={data} onReset={this.onReset} /> : 
                 (
                   <div className="piece-selector">
-                    Select 
-                    <button id="btnX" onClick={()=>this.selectPiece(0)}>x</button>
-                    <button id="btnO" onClick={()=>this.selectPiece(1)}>o</button>
+                    <div className="piece-selector-title"><h1>React Tic Tac</h1><img className="toe" src={toe} alt="toe"/></div>
+                    <div className="piece-selector-els">
+                      <div>Player 1</div>
+                      <div>Select Piece</div>
+                    </div>
+                    <div className="btns-container">
+                      <button id="btnX" onClick={()=>this.selectPiece(0)}>x</button>
+                      <button id="btnO" onClick={()=>this.selectPiece(1)}>o</button>
+                    </div>
                   </div>
                 )
               }

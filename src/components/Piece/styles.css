@@ -1,0 +1,75 @@
+
+.piece {
+	width: 5em;
+	height: 5em;
+}
+
+.border-1 {
+	border: 3px solid white;
+}
+
+.border-2 {
+	border: 3px solid black;
+}
+
+.piece-x {
+	border: 3px solid black;
+}
+
+.square-0-0 {
+	border-top: none;
+	border-left: none;
+}
+
+.square-0-1 {
+	border-top: none;
+}
+
+.square-0-2 {
+	border-top: none;
+	border-right: none;
+}
+
+.square-1-0 {
+	border-left: none;	
+}
+
+.square-1-1 {
+
+}
+
+.square-1-2 {
+	border-right: none;	
+}
+
+.square-2-0 {
+	border-left: none;
+	border-bottom: none;
+}
+
+.square-2-1 {
+	border-bottom: none;
+}
+
+.square-2-2 {
+	border-right: none;
+	border-bottom: none;
+}
+
+.symbol-X {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1em;
+	color: #16ECC5;
+}
+
+.symbol-O {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1em;
+	color: #EB7272;
+}
+
+

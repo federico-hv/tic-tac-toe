@@ -6,29 +6,49 @@ exports[`<Game /> Matches snapshot 1`] = `
     className="game-container"
   >
     <div
-      className="board"
+      className="board-container"
     >
-      <h1
-        className="player-turn"
-      >
-        First Player
-      </h1>
       <div
         className="piece-selector"
       >
-        Select
-        <button
-          id="btnX"
-          onClick={[Function]}
+        <div
+          className="piece-selector-title"
         >
-          x
-        </button>
-        <button
-          id="btnO"
-          onClick={[Function]}
+          <h1>
+            React Tic Tac
+          </h1>
+          <img
+            alt="toe"
+            className="toe"
+            src="toe.svg"
+          />
+        </div>
+        <div
+          className="piece-selector-els"
         >
-          o
-        </button>
+          <div>
+            Player 1
+          </div>
+          <div>
+            Select Piece
+          </div>
+        </div>
+        <div
+          className="btns-container"
+        >
+          <button
+            id="btnX"
+            onClick={[Function]}
+          >
+            x
+          </button>
+          <button
+            id="btnO"
+            onClick={[Function]}
+          >
+            o
+          </button>
+        </div>
       </div>
     </div>
   </div>

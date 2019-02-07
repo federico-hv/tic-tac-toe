@@ -3,7 +3,7 @@
 exports[`<Piece /> Matches snapshot 1`] = `
 <Piece>
   <div
-    className="piece"
+    className="piece square-undefined border-undefined symbol-undefined"
     onClick={null}
   />
 </Piece>

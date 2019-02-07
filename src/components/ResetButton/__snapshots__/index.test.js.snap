@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResetButton> Should Match snaptshot 1`] = `
+<button
+  className="reset-button"
+>
+  Restart Game
+</button>
+`;

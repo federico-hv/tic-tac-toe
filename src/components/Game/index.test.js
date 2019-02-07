@@ -8,7 +8,7 @@ describe('<Game />', ()=>{
 
 	it('Should render a game container if game started', () => {
 		const wrapper = shallow(<Game />);
-		expect(wrapper.find('.board').length).toEqual(1);
+		expect(wrapper.find('.board-container').length).toEqual(1);
 		wrapper.unmount();
 	});
 	
@@ -45,28 +45,31 @@ describe('<Game />', ()=>{
 
 
 	it('Should render the final result after checkGameResult when game ends', () => {
-		const app = shallow(<Game />);
+		const app = mount(<Game />);
 		const data = [['X', '', 'O'],['X','O',''],['X','O','X']];
 		
-		app.setState({ data });
+		app.setState({ data, starterPiece: 'X' });
 		app.instance().getGameResult = jest.fn().mockReturnValueOnce(1);
 		app.instance().checkGameResult();
-		expect(app.find('.board').length).toEqual(0);
-		expect(app.find('.game-result').length).toEqual(1);
+		app.update();
+		expect(app.find('.board-container').length).toEqual(1);
+		expect(app.find('.result').length).toEqual(1);
 	})
+
 
 	
 	it('Should render the turn of the corresponding player on every turn', () => {
-		const app = shallow(<Game />);
+		const app = mount(<Game />);
 		const data = [['X', '', 'O'],['X','O',''],['X','O','X']];
 		
-		expect(app.find('.player-turn').length).toEqual(1);
-		expect(app.find('.player-turn').text()).toEqual('First Player');
+		app.setState({ player: 0, starterPiece: 'X' });
+		expect(app.find('.player-turn-1').length).toEqual(1);
+		expect(app.find('.player-turn-1').text()).toEqual('Player\'s 1 turn');
 
 		app.instance().getGameResult = jest.fn().mockReturnValueOnce(0);
 		app.instance().checkGameResult();
-		
-		expect(app.find('.player-turn').text()).toEqual('Second Player');
+		app.update()
+		expect(app.find('.player-turn-2').text()).toEqual('Player\'s 2 turn');
 	})
 
 	it('Should render piece selector before game starts and board after', () => {	

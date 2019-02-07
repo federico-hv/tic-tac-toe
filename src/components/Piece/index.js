@@ -1,7 +1,11 @@
 import React from 'react';
 import './styles.css';
 
-const Piece = ({symbol, onSelect}) => <div onClick={symbol === '' ? ()=>onSelect(symbol) : null} className="piece">{symbol}</div>
+const Piece = ({symbol, onSelect, squareIndex, player}) => (
+	<div className={`piece square-${squareIndex} border-${player} symbol-${symbol}`} onClick={symbol === '' ? ()=>onSelect(symbol) : null}>
+		{symbol}
+	</div>
+);
 
 
 export default Piece;

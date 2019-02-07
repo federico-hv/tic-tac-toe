@@ -25,110 +25,133 @@ exports[`<Board /> Matches snapshot 1`] = `
   <div
     className="board"
   >
-    <Piece
-      key="0"
-      onSelect={[Function]}
-      symbol="X"
+    <h1
+      className="result"
+    />
+    <div
+      className="squares-container"
     >
-      <div
-        className="piece"
-        onClick={null}
+      <Piece
+        key="0"
+        onSelect={[Function]}
+        squareIndex="0-0"
+        symbol="X"
       >
-        X
-      </div>
-    </Piece>
-    <Piece
-      key="1"
-      onSelect={[Function]}
-      symbol=""
-    >
-      <div
-        className="piece"
-        onClick={[Function]}
-      />
-    </Piece>
-    <Piece
-      key="2"
-      onSelect={[Function]}
-      symbol="O"
-    >
-      <div
-        className="piece"
-        onClick={null}
+        <div
+          className="piece square-0-0 border-undefined symbol-X"
+          onClick={null}
+        >
+          X
+        </div>
+      </Piece>
+      <Piece
+        key="1"
+        onSelect={[Function]}
+        squareIndex="0-1"
+        symbol=""
       >
-        O
-      </div>
-    </Piece>
-    <Piece
-      key="0"
-      onSelect={[Function]}
-      symbol="O"
-    >
-      <div
-        className="piece"
-        onClick={null}
+        <div
+          className="piece square-0-1 border-undefined symbol-"
+          onClick={[Function]}
+        />
+      </Piece>
+      <Piece
+        key="2"
+        onSelect={[Function]}
+        squareIndex="0-2"
+        symbol="O"
       >
-        O
-      </div>
-    </Piece>
-    <Piece
-      key="1"
-      onSelect={[Function]}
-      symbol="X"
-    >
-      <div
-        className="piece"
-        onClick={null}
+        <div
+          className="piece square-0-2 border-undefined symbol-O"
+          onClick={null}
+        >
+          O
+        </div>
+      </Piece>
+      <Piece
+        key="0"
+        onSelect={[Function]}
+        squareIndex="1-0"
+        symbol="O"
       >
-        X
-      </div>
-    </Piece>
-    <Piece
-      key="2"
-      onSelect={[Function]}
-      symbol=""
-    >
-      <div
-        className="piece"
-        onClick={[Function]}
-      />
-    </Piece>
-    <Piece
-      key="0"
-      onSelect={[Function]}
-      symbol="X"
-    >
-      <div
-        className="piece"
-        onClick={null}
+        <div
+          className="piece square-1-0 border-undefined symbol-O"
+          onClick={null}
+        >
+          O
+        </div>
+      </Piece>
+      <Piece
+        key="1"
+        onSelect={[Function]}
+        squareIndex="1-1"
+        symbol="X"
       >
-        X
-      </div>
-    </Piece>
-    <Piece
-      key="1"
-      onSelect={[Function]}
-      symbol="O"
-    >
-      <div
-        className="piece"
-        onClick={null}
+        <div
+          className="piece square-1-1 border-undefined symbol-X"
+          onClick={null}
+        >
+          X
+        </div>
+      </Piece>
+      <Piece
+        key="2"
+        onSelect={[Function]}
+        squareIndex="1-2"
+        symbol=""
       >
-        O
-      </div>
-    </Piece>
-    <Piece
-      key="2"
-      onSelect={[Function]}
-      symbol="X"
-    >
-      <div
-        className="piece"
-        onClick={null}
+        <div
+          className="piece square-1-2 border-undefined symbol-"
+          onClick={[Function]}
+        />
+      </Piece>
+      <Piece
+        key="0"
+        onSelect={[Function]}
+        squareIndex="2-0"
+        symbol="X"
       >
-        X
-      </div>
-    </Piece>
+        <div
+          className="piece square-2-0 border-undefined symbol-X"
+          onClick={null}
+        >
+          X
+        </div>
+      </Piece>
+      <Piece
+        key="1"
+        onSelect={[Function]}
+        squareIndex="2-1"
+        symbol="O"
+      >
+        <div
+          className="piece square-2-1 border-undefined symbol-O"
+          onClick={null}
+        >
+          O
+        </div>
+      </Piece>
+      <Piece
+        key="2"
+        onSelect={[Function]}
+        squareIndex="2-2"
+        symbol="X"
+      >
+        <div
+          className="piece square-2-2 border-undefined symbol-X"
+          onClick={null}
+        >
+          X
+        </div>
+      </Piece>
+    </div>
+    <ResetButton>
+      <button
+        className="reset-button"
+      >
+        Restart Game
+      </button>
+    </ResetButton>
   </div>
 </Board>
 `;
