@@ -32,7 +32,7 @@ class Game extends Component {
     var tie = new Audio('/sounds/tie.mp3');
     var click = new Audio('/sounds/click.mp3');
 
-    this.setState({ audio: { tada, tie, click } });
+    this.setState({ audio: { tada, tie, click: click } });
   }
 
   /**
@@ -40,8 +40,8 @@ class Game extends Component {
    */
   playSound = (soundName) => {
     this.state.audio[soundName].play()
-      // .then(console.log)
-      // .catch((err)=> console.log('ERROR: ', err.message))
+      .then(console.log)
+      .catch((err)=> console.log('ERROR: ', err.message))
   }
 
   /**
@@ -177,7 +177,8 @@ class Game extends Component {
       starterPiece: null,
       player: 0,
       gameEnded: false,
-      result: ''
+      result: '',
+      coordinates: []
     });
   }
 

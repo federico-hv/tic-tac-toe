@@ -7,7 +7,7 @@ import toJson from 'enzyme-to-json';
 describe('<Game />', ()=>{
 
 	beforeAll(()=>{
-		window.HTMLMediaElement.prototype.play = () => { /* do nothing */ };
+		window.HTMLMediaElement.prototype.play = () => Promise.resolve('sound ok');
 	})
 	it('Should render a game container if game started', () => {
 		const wrapper = shallow(<Game />);
@@ -56,7 +56,6 @@ describe('<Game />', ()=>{
 		app.instance().getGameResult = jest.fn().mockReturnValueOnce({ state: 1, coordinates: [[0,0],[1,1],[2,2]] });
 		app.instance().checkGameResult();
 		app.update();
-		// console.log(app.debug())
 		expect(app.find('.board-container').length).toEqual(1);
 		expect(app.find('.result').length).toEqual(1);
 	})
