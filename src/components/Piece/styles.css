@@ -1,7 +1,8 @@
 
 .piece {
-	width: 5em;
-	height: 5em;
+	width: 6em;
+	height: 6em;
+	cursor: pointer;
 }
 
 .border-1 {
@@ -56,20 +57,29 @@
 	border-bottom: none;
 }
 
-.symbol-X {
+.symbol-X,.symbol-O {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 1em;
+}
+
+.symbol-X {
 	color: #16ECC5;
 }
 
 .symbol-O {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1em;
 	color: #EB7272;
 }
 
+.spancito {
+	font-size: 5em;
+}
 
+.blink {
+	color: #D0A1FF;
+	animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {  
+	50% { opacity: 0; }
+}

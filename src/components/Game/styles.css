@@ -7,10 +7,21 @@
 body {
 	font-family: Comic Sans MS3;
 	margin: 0;
+
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+																	supported by Chrome and Opera */
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 
 .game-container {
 	height: 100vh;
+	width: 100vw;
+	min-height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -29,17 +40,21 @@ body {
 	justify-content: center;
 	flex-wrap: wrap;
 	width: 100vw;
-	height: 80vh;
+	height: 100%;
+	overflow: hidden;
 	position: absolute;
 }
 
 .piece-selector {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
 }
 
 .piece-selector-title {
 	display: flex;
+	color: #EB7272;
 }
 
 .toe {
@@ -53,7 +68,7 @@ body {
 	align-items: center;
 	font-size: 40px;
 	color: #16ECC5;
-	margin-top: 20px;
+	margin: 40px 0px 40px 0px;
 }
 
 .btns-container {
@@ -71,7 +86,7 @@ body {
 	height: 100px;
 	font-family: Comic Sans MS3;
 	font-size: 3.5em;
-	padding-bottom: 0.8em;
+	padding-bottom: 0.3em;
 	outline:none;
 	border: none;
 	border-radius: 5px;
@@ -101,3 +116,31 @@ body {
 	color: #EB7272;
 	background-color: #16ECC5;
 }
+
+
+@media screen and (min-width: 1800px) {
+	.piece-selector-title {
+		margin-top:-80px;
+	}
+}
+
+
+/* For Safari IOS */
+@supports (-webkit-overflow-scrolling: touch) {
+	.piece-selector {
+		justify-content: flex-start;
+		padding-top: 40px;
+	}
+
+	.game-container {
+		position: fixed;
+	}
+}
+
+/* For Firefox
+@-moz-document url-prefix() {	
+	#btnX, #btnO {
+		padding-bottom: 0.3em;
+	}
+}
+*/

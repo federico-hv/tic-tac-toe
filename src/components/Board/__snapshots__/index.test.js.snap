@@ -2,6 +2,22 @@
 
 exports[`<Board /> Matches snapshot 1`] = `
 <Board
+  coordinates={
+    Array [
+      Array [
+        0,
+        0,
+      ],
+      Array [
+        1,
+        1,
+      ],
+      Array [
+        2,
+        2,
+      ],
+    ]
+  }
   data={
     Array [
       Array [
@@ -32,6 +48,7 @@ exports[`<Board /> Matches snapshot 1`] = `
       className="squares-container"
     >
       <Piece
+        highLight={true}
         key="0"
         onSelect={[Function]}
         squareIndex="0-0"
@@ -41,10 +58,15 @@ exports[`<Board /> Matches snapshot 1`] = `
           className="piece square-0-0 border-undefined symbol-X"
           onClick={null}
         >
-          X
+          <span
+            className="spancito blink"
+          >
+            X
+          </span>
         </div>
       </Piece>
       <Piece
+        highLight={false}
         key="1"
         onSelect={[Function]}
         squareIndex="0-1"
@@ -53,9 +75,14 @@ exports[`<Board /> Matches snapshot 1`] = `
         <div
           className="piece square-0-1 border-undefined symbol-"
           onClick={[Function]}
-        />
+        >
+          <span
+            className="spancito"
+          />
+        </div>
       </Piece>
       <Piece
+        highLight={false}
         key="2"
         onSelect={[Function]}
         squareIndex="0-2"
@@ -65,10 +92,15 @@ exports[`<Board /> Matches snapshot 1`] = `
           className="piece square-0-2 border-undefined symbol-O"
           onClick={null}
         >
-          O
+          <span
+            className="spancito"
+          >
+            O
+          </span>
         </div>
       </Piece>
       <Piece
+        highLight={false}
         key="0"
         onSelect={[Function]}
         squareIndex="1-0"
@@ -78,10 +110,15 @@ exports[`<Board /> Matches snapshot 1`] = `
           className="piece square-1-0 border-undefined symbol-O"
           onClick={null}
         >
-          O
+          <span
+            className="spancito"
+          >
+            O
+          </span>
         </div>
       </Piece>
       <Piece
+        highLight={true}
         key="1"
         onSelect={[Function]}
         squareIndex="1-1"
@@ -91,10 +128,15 @@ exports[`<Board /> Matches snapshot 1`] = `
           className="piece square-1-1 border-undefined symbol-X"
           onClick={null}
         >
-          X
+          <span
+            className="spancito blink"
+          >
+            X
+          </span>
         </div>
       </Piece>
       <Piece
+        highLight={false}
         key="2"
         onSelect={[Function]}
         squareIndex="1-2"
@@ -103,9 +145,14 @@ exports[`<Board /> Matches snapshot 1`] = `
         <div
           className="piece square-1-2 border-undefined symbol-"
           onClick={[Function]}
-        />
+        >
+          <span
+            className="spancito"
+          />
+        </div>
       </Piece>
       <Piece
+        highLight={false}
         key="0"
         onSelect={[Function]}
         squareIndex="2-0"
@@ -115,10 +162,15 @@ exports[`<Board /> Matches snapshot 1`] = `
           className="piece square-2-0 border-undefined symbol-X"
           onClick={null}
         >
-          X
+          <span
+            className="spancito"
+          >
+            X
+          </span>
         </div>
       </Piece>
       <Piece
+        highLight={false}
         key="1"
         onSelect={[Function]}
         squareIndex="2-1"
@@ -128,10 +180,15 @@ exports[`<Board /> Matches snapshot 1`] = `
           className="piece square-2-1 border-undefined symbol-O"
           onClick={null}
         >
-          O
+          <span
+            className="spancito"
+          >
+            O
+          </span>
         </div>
       </Piece>
       <Piece
+        highLight={true}
         key="2"
         onSelect={[Function]}
         squareIndex="2-2"
@@ -141,7 +198,11 @@ exports[`<Board /> Matches snapshot 1`] = `
           className="piece square-2-2 border-undefined symbol-X"
           onClick={null}
         >
-          X
+          <span
+            className="spancito blink"
+          >
+            X
+          </span>
         </div>
       </Piece>
     </div>

@@ -1,5 +1,6 @@
 
 .reset-button {
+	cursor: pointer;
 	background: #EB7272;
 	color: white;
 	height: 50px;

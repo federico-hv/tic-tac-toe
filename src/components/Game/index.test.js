@@ -6,6 +6,9 @@ import toJson from 'enzyme-to-json';
 
 describe('<Game />', ()=>{
 
+	beforeAll(()=>{
+		window.HTMLMediaElement.prototype.play = () => { /* do nothing */ };
+	})
 	it('Should render a game container if game started', () => {
 		const wrapper = shallow(<Game />);
 		expect(wrapper.find('.board-container').length).toEqual(1);
@@ -30,17 +33,17 @@ describe('<Game />', ()=>{
 		let data = app.state().data;
 		
 		//default data means game is still on
-		expect(app.instance().getGameResult(data)).toEqual(0);
+		expect(app.instance().getGameResult(data)).toEqual({ state: 0 });
 		
 		// an array with a winning result should return 1
 		data = [['X', '', 'O'],['O','X',''],['X','O','X']]
 		app.setState({ data });
-		expect(app.instance().getGameResult(data)).toEqual(1);
+		expect(app.instance().getGameResult(data)).toEqual({ state: 1, coordinates: [[0,0],[1,1],[2,2]] });
 
 		// an array with a tie result should return 2
 		data = [['X', 'O', 'X'],['O','O','X'],['X','X','O']]
 		app.setState({ data });
-		expect(app.instance().getGameResult(data)).toEqual(2);
+		expect(app.instance().getGameResult(data)).toEqual({ state: 2});
 	})
 
 
@@ -49,15 +52,16 @@ describe('<Game />', ()=>{
 		const data = [['X', '', 'O'],['X','O',''],['X','O','X']];
 		
 		app.setState({ data, starterPiece: 'X' });
-		app.instance().getGameResult = jest.fn().mockReturnValueOnce(1);
+		app.update();
+		app.instance().getGameResult = jest.fn().mockReturnValueOnce({ state: 1, coordinates: [[0,0],[1,1],[2,2]] });
 		app.instance().checkGameResult();
 		app.update();
+		// console.log(app.debug())
 		expect(app.find('.board-container').length).toEqual(1);
 		expect(app.find('.result').length).toEqual(1);
 	})
 
 
-	
 	it('Should render the turn of the corresponding player on every turn', () => {
 		const app = mount(<Game />);
 		const data = [['X', '', 'O'],['X','O',''],['X','O','X']];
@@ -66,7 +70,7 @@ describe('<Game />', ()=>{
 		expect(app.find('.player-turn-1').length).toEqual(1);
 		expect(app.find('.player-turn-1').text()).toEqual('Player\'s 1 turn');
 
-		app.instance().getGameResult = jest.fn().mockReturnValueOnce(0);
+		app.instance().getGameResult = jest.fn().mockReturnValueOnce({ state: 0 });
 		app.instance().checkGameResult();
 		app.update()
 		expect(app.find('.player-turn-2').text()).toEqual('Player\'s 2 turn');
