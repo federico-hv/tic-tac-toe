@@ -38,10 +38,12 @@ class Game extends Component {
   /**
    * Receives and audio file name a plays it
    */
-  playSound = (soundName) => {
-    this.state.audio[soundName].play()
-      .then(console.log)
-      .catch((err)=> console.log('ERROR: ', err.message))
+  playSound = async (soundName) => {
+    try {
+      this.state.audio[soundName].play();
+    } catch(e) {
+      console.log('ERROR: ', e);
+    }
   }
 
   /**
@@ -191,7 +193,7 @@ class Game extends Component {
       result 
     } = this.state;
     const currentPlayer = player === 0 ? 1 : 2;
-
+    
     return (
       <div className={starterPiece === null && result === '' ? 'game-container' : `game-container gc-${currentPlayer}`}>
         {
